@@ -17,24 +17,10 @@
         @node-click="onNodeClick"
         v-bind="treeAttrs"
       >
-        <template v-slot="{ data: d }">
-          <div class="tree-node el-tree-node__label">
-            <div
-              v-if="isMilestone(d)"
-              :class="['milestone-mark', { done: d.done }]"
-            ></div>
-            <span class="name ellipsis" :title="d.name">{{ d.name }}</span>
-            <!-- FIXME: 暂时隐藏进度和操作 -->
-            <!-- <span class="progress">{{ d.progress.toFixed(0) }}%</span>
-            <el-link
-              class="delete"
-              type="danger"
-              :underline="false"
-              @click="onDelete(d)"
-              >删除</el-link
-            > -->
-          </div>
-        </template>
+        <span class="tree-node" slot-scope="{ node, data }">
+          <span>{{ data.name }}</span>
+          <slot name="dropdown-menu" v-bind:data="data"></slot>
+        </span>
       </el-tree>
     </div>
   </div>
@@ -222,10 +208,20 @@ export default Vue.extend({
     overflow-y: auto;
     padding: 0 2px 20px 0;
 
+    .custom-tree-node {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      padding-right: 8px;
+    }
+
     .tree-node {
       flex: 1 1 auto;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       min-width: 0; // make ellipsis work in grid item
       padding-right: 5px;
 

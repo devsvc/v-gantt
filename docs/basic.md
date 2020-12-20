@@ -22,11 +22,35 @@
     <div slot="tree-header">
       <h5 style="margin: 0">甘特图</h5>
     </div>
+    <template v-slot:dropdown-menu1="{ data }">
+      <el-dropdown trigger="click" @command="handleCommand">
+        <span class="el-dropdown-link">
+          ...
+        </span>
+        <el-dropdown-menu>
+          <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
+          <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
+          <el-dropdown-item icon="el-icon-circle-plus-outline"
+            >螺蛳粉</el-dropdown-item
+          >
+          <el-dropdown-item icon="el-icon-check">双皮奶</el-dropdown-item>
+          <el-dropdown-item icon="el-icon-circle-check"
+            >蚵仔煎</el-dropdown-item
+          >
+        </el-dropdown-menu>
+      </el-dropdown>
+    </template>
   </v-gantt>
 </template>
 
 <script>
 export default {
+  methods: {
+    handleCommand(command) {
+      this.$message('click on item ' + command)
+    },
+  },
+
   data() {
     const y = new Date().getFullYear()
     const m = `${new Date().getMonth() + 1}`.padStart(2, 0)

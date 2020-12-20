@@ -1,15 +1,10 @@
 # v-gantt
 
-[![Build Status](https://badgen.net/travis/FEMessage/v-gantt/master)](https://travis-ci.com/FEMessage/v-gantt)
-[![NPM Download](https://badgen.net/npm/dm/@femessage/v-gantt)](https://www.npmjs.com/package/@femessage/v-gantt)
-[![NPM Version](https://badgen.net/npm/v/@femessage/v-gantt)](https://www.npmjs.com/package/@femessage/v-gantt)
-[![NPM License](https://badgen.net/npm/license/@femessage/v-gantt)](https://github.com/FEMessage/v-gantt/blob/master/LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/FEMessage/v-gantt/pulls)
-[![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
+A fork of @femessage/v-gantt.
 
-![image.png](https://i.loli.net/2020/07/09/SoyCaBGfpNvJP1m.png)
+## what's changed:
 
-[中文文档](./README-zh.md)
+1. use split pane to allow resize left tree and gantt chart on the right side.
 
 ## Table of Contents
 
@@ -157,6 +152,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
