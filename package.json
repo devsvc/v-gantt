@@ -1,14 +1,14 @@
 {
-  "name": "@femessage/v-gantt",
-  "version": "1.0.0",
-  "description": "vue gantt component, just like omniplan!",
+  "name": "@devsvc/v-gantt",
+  "version": "1.0.1",
+  "description": "a fork of @femesage/v-gantt",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FEMessage/v-gantt.git"
+    "url": "https://github.com/devsvc/v-gantt.git"
   },
   "contributors": [
-    "https://github.com/FEMessage"
+    "https://github.com/devsvc"
   ],
   "keywords": [
     "vue",
@@ -44,6 +44,7 @@
     "dayjs": "^1.8.29",
     "lodash.clonedeep": "^4.5.0",
     "lodash.uniq": "^4.5.0",
+    "splitpanes": "^2.3.6",
     "store2": "^2.11.2"
   },
   "devDependencies": {
