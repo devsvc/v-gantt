@@ -1,10 +1,12 @@
 # v-gantt
 
 A fork of @femessage/v-gantt.
+![image.png](./docs/images/Xnip2020-12-21_03-41-15.jpg)
 
 ## what's changed:
 
 1. use split pane to allow resize left tree and gantt chart on the right side.
+2. support add a dropdown menu on the right side of tree node.
 
 ## Table of Contents
 
