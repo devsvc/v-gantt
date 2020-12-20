@@ -12,8 +12,8 @@
         >
           <!--@slot 左侧树 header -->
           <slot slot="header" name="tree-header"></slot>
-          <template v-slot:dropdown-menu="{ data }">
-            <slot name="dropdown-menu1" v-bind:data="data"> </slot>
+          <template v-slot:dropdown-menu="{ d }">
+            <slot name="dropdown-menu1" v-bind:d="d"> </slot>
           </template>
         </gantt-tree>
       </pane>

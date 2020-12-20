@@ -22,13 +22,15 @@
     <div slot="tree-header">
       <h5 style="margin: 0">甘特图</h5>
     </div>
-    <template v-slot:dropdown-menu1="{ data }">
+    <template v-slot:dropdown-menu1="{ d }">
       <el-dropdown trigger="click" @command="handleCommand">
         <span class="el-dropdown-link">
           ...
         </span>
         <el-dropdown-menu>
-          <el-dropdown-item icon="el-icon-plus">黄金糕</el-dropdown-item>
+          <el-dropdown-item icon="el-icon-plus" :command="before(d, 'a')"
+            >黄金糕</el-dropdown-item
+          >
           <el-dropdown-item icon="el-icon-circle-plus">狮子头</el-dropdown-item>
           <el-dropdown-item icon="el-icon-circle-plus-outline"
             >螺蛳粉</el-dropdown-item
@@ -46,7 +48,14 @@
 <script>
 export default {
   methods: {
+    before(data, name) {
+      return {
+        data: data,
+        name: name,
+      }
+    },
     handleCommand(command) {
+      console.log(command)
       this.$message('click on item ' + command)
     },
   },

@@ -19,7 +19,7 @@
       >
         <span class="tree-node" slot-scope="{ node, data }">
           <span>{{ data.name }}</span>
-          <slot name="dropdown-menu" v-bind:data="data"></slot>
+          <slot name="dropdown-menu" v-bind:d="data"></slot>
         </span>
       </el-tree>
     </div>
