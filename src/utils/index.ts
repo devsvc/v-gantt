@@ -7,6 +7,7 @@ import {
   GanttGroup,
   GanttPropItem,
 } from '@/utils/types'
+import EventEmitter from '@/utils/event-emitter'
 
 /**
  * 判断是否是群组节点（不支持空群组节点）

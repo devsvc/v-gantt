@@ -1,23 +1,29 @@
 <template>
   <div class="v-gantt">
-    <gantt-tree
-      :data="ganttData"
-      :bus="bus"
-      :scroll-top.sync="scrollTop"
-      @delete="onDelete"
-      @move="onMove"
-      :treeAttrs="treeAttrs"
-    >
-      <!--@slot 左侧树 header -->
-      <slot slot="header" name="tree-header"></slot>
-    </gantt-tree>
-    <gantt-chart
-      :data="ganttData"
-      :bus="bus"
-      :scroll-top.sync="scrollTop"
-      :drag-data="dragData"
-      :resize-data="resizeData"
-    />
+    <splitpanes class="default-theme">
+      <pane min-size="20" size="30" max-size="50">
+        <gantt-tree
+          :data="ganttData"
+          :bus="bus"
+          :scroll-top.sync="scrollTop"
+          @delete="onDelete"
+          @move="onMove"
+          :treeAttrs="treeAttrs"
+        >
+          <!--@slot 左侧树 header -->
+          <slot slot="header" name="tree-header"></slot>
+        </gantt-tree>
+      </pane>
+      <pane>
+        <gantt-chart
+          :data="ganttData"
+          :bus="bus"
+          :scroll-top.sync="scrollTop"
+          :drag-data="dragData"
+          :resize-data="resizeData"
+        />
+      </pane>
+    </splitpanes>
   </div>
 </template>
 <script lang="ts">
@@ -49,6 +55,8 @@ import {
   isMilestone,
 } from '@/utils'
 import EventEmitter from '@/utils/event-emitter'
+import { Splitpanes, Pane } from 'splitpanes'
+import 'splitpanes/dist/splitpanes.css'
 
 function transform(data: GanttPropData): GanttData {
   return data.map((d) => {
@@ -115,7 +123,7 @@ function getCollapsedMap(data: GanttPropData): CollapsedMap {
 
 export default Vue.extend({
   name: 'VGantt',
-  components: { GanttTree, GanttChart },
+  components: { GanttTree, GanttChart, Splitpanes, Pane },
   props: {
     /**
      * 行高
@@ -389,12 +397,13 @@ export default Vue.extend({
 
   .gantt-tree {
     flex: 0 0 auto;
-    width: 250px;
+    width: 100%;
     height: 100%;
   }
 
   .gantt-chart {
     flex: 1 0 auto;
+    width: 100%;
     height: 100%;
   }
 }
