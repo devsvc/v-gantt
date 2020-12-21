@@ -1,8 +1,6 @@
 /**
  * 组件内全局通信机制
  */
-// 添加const关键字，否则第三方引用的时候会报错找不到模块
-// https://stackoverflow.com/questions/62483612/typescript-module-not-found-cant-resolve
 export enum GanttEvent {
   ResizeStart,
   Resize,

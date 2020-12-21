@@ -105,8 +105,6 @@ export interface Bus {
   ee: EventEmitter
 }
 
-declare module '@/utils/event-emitter'
-
 export enum ColUnit {
   Day = 'day',
   Week = 'week',
